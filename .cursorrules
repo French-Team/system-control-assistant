@@ -1,0 +1,13 @@
+### pieges à éviter
+
+1. Erreur d'hydratation Next.js (Hydration failed)
+   - Ne pas utiliser `ssr: false` dans les Server Components (layout.tsx, page.tsx)
+   - Utiliser 'use client' pour les composants qui utilisent des hooks React
+   - Gérer l'état `mounted` pour éviter les différences serveur/client
+   - Fournir un rendu initial cohérent avant l'hydratation
+
+2. Erreur de module non trouvé (Module not found)
+   - Vérifier que le fichier existe dans le bon dossier
+   - Respecter la casse exacte du nom du fichier
+   - Installer toutes les dépendances nécessaires
+   - Vérifier les chemins d'importation relatifs vs absolus (@/)

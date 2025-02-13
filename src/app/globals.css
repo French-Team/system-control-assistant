@@ -1,21 +1,39 @@
+/* postcss-preset-env stage 1 */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import '@/components/main-layout/theme.css';
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Styles globaux de base */
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* Application des styles de texte par défaut */
+h1 {
+  color: var(--h1-color);
+}
+
+h2 {
+  color: var(--h2-color);
+}
+
+h3 {
+  color: var(--h3-color);
+}
+
+span {
+  color: var(--span-color);
+}
+
+p {
+  color: var(--p-color);
 }

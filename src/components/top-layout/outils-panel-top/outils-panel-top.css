@@ -1,0 +1,76 @@
+/* Styles spécifiques aux outils du panel top */
+
+/* Animation d'expansion */
+.mini-tools-grid {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.mini-tools-grid.expanded {
+  max-height: 500px; /* Hauteur maximale pour l'animation */
+}
+
+/* Styles des outils */
+.tool-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.tool-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Styles des indicateurs */
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.status-active {
+  background-color: var(--accent-color);
+}
+
+.status-warning {
+  background-color: #f59e0b;
+}
+
+.status-error {
+  background-color: #ef4444;
+}
+
+/* Styles des graphiques et visualisations */
+.chart-container {
+  height: 100px;
+  background-color: var(--block-bg-color);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Styles des contrôles */
+.tool-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.tool-button {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: var(--panel-hover-color);
+  color: var(--text-primary);
+  font-size: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.tool-button:hover {
+  background-color: var(--accent-color);
+  color: var(--panel-bg-color);
+} 

@@ -1,0 +1,72 @@
+/* Variables spécifiques au top-layout */
+:root {
+  --top-panel-height: 300px;
+  --top-header-height: 40px;
+  --tool-spacing: 1rem;
+}
+
+/* Container principal */
+.top-layout {
+  width: 100%;
+  height: var(--top-panel-height);
+  background-color: var(--panel-bg-color);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header du top-layout */
+.top-layout-header {
+  height: var(--top-header-height);
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  background-color: var(--panel-bg-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Zone des outils */
+.tools-container {
+  flex: 1;
+  display: flex;
+  padding: var(--tool-spacing);
+  gap: var(--tool-spacing);
+  overflow-x: auto;
+}
+
+/* Style général des outils */
+.tool-item {
+  flex: 1;
+  min-width: 200px;
+  background-color: var(--block-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.tool-item:hover {
+  border-color: var(--accent-color);
+  background-color: var(--panel-hover-color);
+}
+
+/* Zone des mini-outils */
+.mini-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.mini-tool {
+  background-color: var(--block-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.mini-tool:hover {
+  border-color: var(--accent-color);
+  background-color: var(--panel-hover-color);
+} 

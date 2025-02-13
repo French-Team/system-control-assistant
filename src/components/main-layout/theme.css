@@ -1,0 +1,138 @@
+/* Variables de thème */
+:root {
+  /* Theme Light */
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --panel-bg-color: #ffffff;
+  --block-bg-color: #f1f5f9;
+  --panel-text-color: #1e293b;
+  --panel-hover-color: #f1f5f9;
+  --card-bg: #ffffff;
+  --border-color: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent-color: #3b82f6;
+  --alt-accent-color: #0f172a;
+
+  /* Text Styles Light */
+  --h1-color: #3b82f6;
+  --h2-color: #3b82f6;
+  --h3-color: #3b82f6;
+  --span-color: #475569;
+  --p-color: #64748b;
+}
+
+/* Theme Dark */
+.dark {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --panel-bg-color: #0f172a;
+  --block-bg-color: #1e293b;
+  --panel-text-color: #f8fafc;
+  --panel-hover-color: #1e293b;
+  --card-bg: #0f172a;
+  --border-color: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent-color: #f5de15;
+  --alt-accent-color: #f8fafc;
+
+  /* Text Styles Dark */
+  --h1-color: #f5de15;
+  --h2-color: #f5de15;
+  --h3-color: #f5de15;
+  --span-color: #cbd5e1;
+  --p-color: #94a3b8;
+}
+
+/* Transition de thème */
+.theme-transition {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Classes utilitaires pour les composants */
+
+/* Backgrounds */
+.theme-bg {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.theme-panel-bg {
+  background-color: var(--panel-bg-color);
+}
+
+.theme-block-bg {
+  background-color: var(--block-bg-color);
+}
+
+.theme-hover-bg {
+  background-color: var(--panel-hover-color);
+}
+
+/* Textes */
+.theme-text {
+  color: var(--panel-text-color);
+}
+
+.theme-text-primary {
+  color: var(--text-primary);
+}
+
+.theme-text-secondary {
+  color: var(--text-secondary);
+}
+
+/* Bordures */
+.theme-border {
+  border: 1px solid var(--border-color);
+}
+
+.theme-border-hover {
+  border: 1px solid var(--accent-color);
+}
+
+/* Accents */
+.theme-accent {
+  color: var(--accent-color);
+}
+
+.theme-alt-accent {
+  color: var(--alt-accent-color);
+}
+
+/* Styles spécifiques */
+.theme-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+}
+
+.theme-card:hover {
+  border-color: var(--accent-color);
+  background-color: var(--panel-hover-color);
+}
+
+/* Styles de texte */
+.theme-h1 {
+  color: var(--h1-color);
+  font-weight: 600;
+}
+
+.theme-h2 {
+  color: var(--h2-color);
+  font-weight: 600;
+}
+
+.theme-h3 {
+  color: var(--h3-color);
+  font-weight: 500;
+}
+
+.theme-span {
+  color: var(--span-color);
+}
+
+.theme-p {
+  color: var(--p-color);
+} 
