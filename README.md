@@ -4,8 +4,8 @@
 
 System Control Assistant est une interface de contrôle système moderne et intuitive développée avec Next.js. Cette application offre une gestion complète via différents panneaux de contrôle spécialisés.
 
-![Aperçu de l'interface](docs/images/preview.png)
-*Image à venir*
+![Aperçu de l'interface](docs/images/interface.jpg)
+
 
 ## 🎥 Démonstration
 
