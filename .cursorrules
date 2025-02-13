@@ -5,9 +5,22 @@
    - Utiliser 'use client' pour les composants qui utilisent des hooks React
    - Gérer l'état `mounted` pour éviter les différences serveur/client
    - Fournir un rendu initial cohérent avant l'hydratation
+   - IMPORTANT : Gérer les attributs HTML qui peuvent être ajoutés par le navigateur :
+     * Utiliser useEffect pour les manipulations du DOM
+     * Éviter les attributs personnalisés qui peuvent être modifiés par des extensions
+     * Gérer le state `mounted` pour les composants qui manipulent le DOM
 
 2. Erreur de module non trouvé (Module not found)
-   - Vérifier que le fichier existe dans le bon dossier
-   - Respecter la casse exacte du nom du fichier
-   - Installer toutes les dépendances nécessaires
-   - Vérifier les chemins d'importation relatifs vs absolus (@/)
+   - TOUJOURS installer les dépendances AVANT de les utiliser dans le code
+   - Ne jamais écrire de code utilisant un package sans l'avoir installé d'abord
+   - Vérifier package.json pour s'assurer que la dépendance est bien listée
+   - Après installation d'une nouvelle dépendance :
+     * Mettre à jour Important.md
+     * Relancer le serveur de développement
+     * Vérifier que le module est bien importé
+
+3. Erreur de dépendances manquantes
+   - Toujours vérifier package.json après l'installation d'une nouvelle dépendance
+   - Installer les dépendances avec la version exacte requise
+   - Mettre à jour Important.md avec les nouvelles dépendances
+   - Relancer le serveur de développement après l'installation

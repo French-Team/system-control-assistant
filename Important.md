@@ -17,6 +17,7 @@
 - tailwind-merge (pour la fusion des classes)
 - postcss et autoprefixer (pour le CSS)
 - postcss-preset-env (pour les fonctionnalités CSS modernes)
+- lucide-react : Bibliothèque d'icônes pour les mini-outils du panel supérieur
 
 ### Organisation des Composants
 ```
