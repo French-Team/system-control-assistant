@@ -1,13 +1,61 @@
 :root {
   /* Variables spécifiques au layout */
   --transition-speed: 0.3s;
-  --step-delay: 0.3s;
+  --panel-transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   --toggle-size: 1.5rem;
   --arrow-size: 0.8rem;
   --text-size: 0.7rem;
   --z-index-panel: 10;
   --z-index-toggle: 100;
   --header-height: 3rem;
+}
+
+/* Animation de clignotement pour le toggle actif */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+/* Animations pour chaque panneau */
+@keyframes slideTopDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes slideTopUp {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100%); }
+}
+
+@keyframes slideBottomUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes slideBottomDown {
+  from { transform: translateY(0); }
+  to { transform: translateY(100%); }
+}
+
+@keyframes slideLeftIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideLeftOut {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+@keyframes slideRightIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideRightOut {
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
 }
 
 .main-layout {
@@ -205,15 +253,10 @@ header {
   position: absolute;
   z-index: var(--z-index-panel);
   will-change: transform;
-  transition: transform var(--transition-speed) steps(1, end);
-  visibility: hidden;
-}
-
-.panel.open {
   visibility: visible;
 }
 
-/* Top and Bottom Panels */
+/* Top Panel */
 .top-panel {
   top: var(--toggle-size);
   left: var(--toggle-size);
@@ -222,6 +265,15 @@ header {
   transform: translateY(-100%);
 }
 
+.top-panel.open {
+  animation: slideTopDown var(--panel-transition) forwards;
+}
+
+.top-panel.closing {
+  animation: slideTopUp var(--panel-transition) forwards;
+}
+
+/* Bottom Panel */
 .bottom-panel {
   bottom: var(--toggle-size);
   left: var(--toggle-size);
@@ -230,12 +282,15 @@ header {
   transform: translateY(100%);
 }
 
-.top-panel.open,
 .bottom-panel.open {
-  transform: translateY(0);
+  animation: slideBottomUp var(--panel-transition) forwards;
 }
 
-/* Side Panels */
+.bottom-panel.closing {
+  animation: slideBottomDown var(--panel-transition) forwards;
+}
+
+/* Left Panel */
 .left-panel {
   top: 0;
   left: 0;
@@ -246,6 +301,15 @@ header {
   z-index: calc(var(--z-index-panel) + 1);
 }
 
+.left-panel.open {
+  animation: slideLeftIn var(--panel-transition) forwards;
+}
+
+.left-panel.closing {
+  animation: slideLeftOut var(--panel-transition) forwards;
+}
+
+/* Right Panel */
 .right-panel {
   top: 0;
   right: 0;
@@ -256,21 +320,24 @@ header {
   z-index: calc(var(--z-index-panel) + 1);
 }
 
-.left-panel.open,
 .right-panel.open {
-  transform: translateX(0);
+  animation: slideRightIn var(--panel-transition) forwards;
 }
 
-/* Panel Content Container */
+.right-panel.closing {
+  animation: slideRightOut var(--panel-transition) forwards;
+}
+
+/* Panel Content */
 .panel-content {
   width: 100%;
   height: 100%;
   padding: 1rem;
   overflow-y: auto;
-  visibility: hidden;
-  transition: visibility 0s steps(1, end);
+  opacity: 0;
+  transition: opacity var(--panel-transition);
 }
 
 .panel.open .panel-content {
-  visibility: visible;
+  opacity: 1;
 } 

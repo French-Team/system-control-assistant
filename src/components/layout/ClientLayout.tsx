@@ -13,91 +13,114 @@ interface ClientLayoutProps {
   children: ReactNode;
 }
 
+interface PanelState {
+  top: boolean;
+  left: boolean;
+  right: boolean;
+  bottom: boolean;
+}
+
+interface PanelAnimation {
+  top: 'none' | 'opening' | 'closing';
+  left: 'none' | 'opening' | 'closing';
+  right: 'none' | 'opening' | 'closing';
+  bottom: 'none' | 'opening' | 'closing';
+}
+
 export default function ClientLayout({ children }: ClientLayoutProps) {
   const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
-  const [panels, setPanels] = useState({
+  const [panels, setPanels] = useState<PanelState>({
     top: false,
     left: false,
     right: false,
     bottom: false,
   });
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [mainContentState, setMainContentState] = useState<'normal' | 'panel-closing' | 'panel-opening'>('normal');
+  const [panelAnimation, setPanelAnimation] = useState<PanelAnimation>({
+    top: 'none',
+    left: 'none',
+    right: 'none',
+    bottom: 'none',
+  });
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  const togglePanel = useCallback((panel: keyof typeof panels) => {
-    if (isTransitioning) return;
+  const handleAnimationEnd = useCallback((panel: keyof PanelState) => {
+    setPanelAnimation(prev => ({
+      ...prev,
+      [panel]: 'none'
+    }));
+  }, []);
 
-    setPanels((prev) => {
-      if (prev[panel]) {
-        return {
-          ...prev,
-          [panel]: false,
-        };
-      }
-
-      const isAnotherPanelOpen = Object.values(prev).some((isOpen) => isOpen);
+  const togglePanel = useCallback((panel: keyof PanelState) => {
+    setPanels(prev => {
+      const isCurrentlyOpen = prev[panel];
       
-      if (isAnotherPanelOpen) {
-        setIsTransitioning(true);
-        
-        setPanels((current) => ({
-          top: false,
-          left: false,
-          right: false,
-          bottom: false,
+      // Si le panneau est ouvert, on le ferme
+      if (isCurrentlyOpen) {
+        setPanelAnimation(prev => ({
+          ...prev,
+          [panel]: 'closing'
         }));
-
+        
         setTimeout(() => {
-          setMainContentState('panel-closing');
-        }, 300);
-
-        setTimeout(() => {
-          setMainContentState('panel-opening');
-        }, 600);
-
-        setTimeout(() => {
-          setPanels((current) => ({
-            top: false,
-            left: false,
-            right: false,
-            bottom: false,
-            [panel]: true,
+          setPanels(current => ({
+            ...current,
+            [panel]: false
           }));
-          setMainContentState('normal');
-          setIsTransitioning(false);
-        }, 900);
-
+        }, 400); // Durée de l'animation
+        
         return prev;
       }
       
+      // Si un autre panneau est ouvert, on le ferme d'abord
+      const openPanel = Object.entries(prev).find(([key, value]) => value);
+      if (openPanel) {
+        const [openPanelKey] = openPanel;
+        setPanelAnimation(prev => ({
+          ...prev,
+          [openPanelKey]: 'closing'
+        }));
+        
+        setTimeout(() => {
+          setPanels(current => ({
+            ...current,
+            [openPanelKey]: false
+          }));
+          
+          // Puis on ouvre le nouveau panneau
+          setPanels(current => ({
+            ...current,
+            [panel]: true
+          }));
+          setPanelAnimation(current => ({
+            ...current,
+            [panel]: 'opening'
+          }));
+        }, 400);
+        
+        return prev;
+      }
+      
+      // Si aucun panneau n'est ouvert, on ouvre directement
+      setPanelAnimation(prev => ({
+        ...prev,
+        [panel]: 'opening'
+      }));
+      
       return {
-        top: false,
-        left: false,
-        right: false,
-        bottom: false,
-        [panel]: true,
+        ...prev,
+        [panel]: true
       };
     });
-  }, [isTransitioning]);
+  }, []);
 
   if (!mounted) {
     return (
       <div className="main-layout">
-        <MainLayout 
-          panels={{
-            top: false,
-            left: false,
-            right: false,
-            bottom: false,
-          }}
-          onToggle={() => {}}
-          mainContentState="normal"
-        >
+        <MainLayout panels={panels} onToggle={() => {}} mainContentState="normal">
           <div className="content-container">
             <div className="center-content">
               {children}
@@ -112,7 +135,10 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
     <div className="main-layout">
       <Toggles panels={panels} onToggle={togglePanel} />
       
-      <div className={`panel top-panel ${panels.top ? 'open' : ''}`}>
+      <div 
+        className={`panel top-panel ${panels.top ? 'open' : ''} ${panelAnimation.top !== 'none' ? panelAnimation.top : ''}`}
+        onAnimationEnd={() => handleAnimationEnd('top')}
+      >
         <TopPanel isOpen={panels.top} />
       </div>
 
@@ -120,13 +146,19 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
         key={pathname}
         panels={panels}
         onToggle={togglePanel}
-        mainContentState={mainContentState}
+        mainContentState="normal"
       >
-        <div className={`panel left-panel ${panels.left ? 'open' : ''}`}>
+        <div 
+          className={`panel left-panel ${panels.left ? 'open' : ''} ${panelAnimation.left !== 'none' ? panelAnimation.left : ''}`}
+          onAnimationEnd={() => handleAnimationEnd('left')}
+        >
           <LeftPanel isOpen={panels.left} />
         </div>
         
-        <div className={`panel right-panel ${panels.right ? 'open' : ''}`}>
+        <div 
+          className={`panel right-panel ${panels.right ? 'open' : ''} ${panelAnimation.right !== 'none' ? panelAnimation.right : ''}`}
+          onAnimationEnd={() => handleAnimationEnd('right')}
+        >
           <RightPanel isOpen={panels.right} />
         </div>
 
@@ -137,7 +169,10 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
         </div>
       </MainLayout>
 
-      <div className={`panel bottom-panel ${panels.bottom ? 'open' : ''}`}>
+      <div 
+        className={`panel bottom-panel ${panels.bottom ? 'open' : ''} ${panelAnimation.bottom !== 'none' ? panelAnimation.bottom : ''}`}
+        onAnimationEnd={() => handleAnimationEnd('bottom')}
+      >
         <BottomPanel isOpen={panels.bottom} />
       </div>
     </div>
