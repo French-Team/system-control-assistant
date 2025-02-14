@@ -1,0 +1,162 @@
+/* Conteneur des alertes */
+.alerts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  height: calc(100% - 1.75rem);
+  padding: 0.125rem;
+  overflow: hidden;
+}
+
+/* Item d'alerte */
+.alert-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.25rem;
+  border-radius: 0.375rem;
+  font-size: 0.625rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(0, 0, 0, 0.4);
+  animation: slideIn 0.3s ease-out;
+  position: relative;
+}
+
+.alert-content {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.alert-time {
+  font-size: 0.625rem;
+  opacity: 0.7;
+  min-width: 3rem;
+  color: var(--terminal-timestamp-color, #94a3b8);
+}
+
+.alert-message {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--terminal-text-color, #e2e8f0);
+}
+
+.alert-indicator {
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+  margin-left: 0.375rem;
+  animation: pulse 2s infinite;
+}
+
+/* Types d'alertes */
+.alert-info {
+  border-color: var(--terminal-info-color, #3b82f6);
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.alert-info .alert-indicator {
+  background-color: var(--terminal-info-color, #3b82f6);
+}
+
+.alert-warning {
+  border-color: var(--terminal-warning-color, #f59e0b);
+  background-color: rgba(245, 158, 11, 0.1);
+}
+
+.alert-warning .alert-indicator {
+  background-color: var(--terminal-warning-color, #f59e0b);
+}
+
+.alert-error {
+  border-color: var(--terminal-error-color, #ef4444);
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+.alert-error .alert-indicator {
+  background-color: var(--terminal-error-color, #ef4444);
+  animation: errorPulse 1s infinite;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.5;
+  }
+}
+
+@keyframes errorPulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+    box-shadow: 0 0 4px var(--terminal-error-color, #ef4444);
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.5;
+  }
+}
+
+/* Effet scanlines */
+.alert-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  border-radius: 0.375rem;
+}
+
+/* Effet screen glow */
+.alert-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at center,
+    transparent 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  pointer-events: none;
+  border-radius: 0.375rem;
+} 

@@ -4,6 +4,7 @@
 @tailwind utilities;
 
 @import "@/components/main-layout/theme.css";
+@import "@/components/layout/layout.css";
 
 /* Styles globaux de base */
 body {

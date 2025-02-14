@@ -10,20 +10,20 @@ interface TerminalLine {
   timestamp: string;
 }
 
-export default function Block5() {
+export default function Block3b() {
   const [mounted, setMounted] = useState(false);
   const [lines, setLines] = useState<TerminalLine[]>([]);
   const contentRef = useRef<HTMLDivElement>(null);
   const startDelay = useRef(0);
 
-  // Commandes et sorties simulées pour le contrôle qualité
+  // Commandes et sorties simulées pour le contrôle standard secondaire
   const commands = [
-    { cmd: 'test unit', output: 'Tests unitaires: 95% succès', type: 'success' },
-    { cmd: 'check coverage', output: 'Couverture de code: 85%', type: 'output' },
-    { cmd: 'lint code', output: 'Erreurs de style détectées', type: 'warning' },
-    { cmd: 'run e2e', output: 'Tests E2E: 2 échecs critiques', type: 'error' },
-    { cmd: 'analyze deps', output: 'Dépendances à jour', type: 'success' },
-    { cmd: 'check types', output: 'Types TypeScript: 3 erreurs', type: 'warning' },
+    { cmd: 'check protocol', output: 'Protocoles de communication validés', type: 'success' },
+    { cmd: 'verify config', output: 'Configuration système conforme', type: 'output' },
+    { cmd: 'test connection', output: 'Latence de connexion élevée', type: 'warning' },
+    { cmd: 'scan system', output: 'Erreur système détectée: module 2', type: 'error' },
+    { cmd: 'monitor health', output: 'État du système: optimal', type: 'success' },
+    { cmd: 'analyze logs', output: 'Anomalies détectées dans les logs', type: 'warning' },
   ];
 
   const getTimestamp = () => {
@@ -59,7 +59,7 @@ export default function Block5() {
     if (!mounted) {
       const timer = setTimeout(() => {
         setMounted(true);
-        addLine('output', 'Contrôle qualité initialisé...');
+        addLine('output', 'Contrôle standard secondaire initialisé...');
       }, startDelay.current);
       return () => clearTimeout(timer);
     }
@@ -85,7 +85,7 @@ export default function Block5() {
             <div className="terminal-button minimize" />
             <div className="terminal-button maximize" />
           </div>
-          <div className="terminal-title">Contrôle Qualité</div>
+          <div className="terminal-title">Contrôle Standard II</div>
         </div>
         
         <div className="terminal-content" ref={contentRef}>
@@ -110,4 +110,4 @@ export default function Block5() {
       </div>
     </div>
   );
-}
+} 

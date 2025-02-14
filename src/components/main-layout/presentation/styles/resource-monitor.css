@@ -1,0 +1,127 @@
+/* Conteneur des ressources */
+.resource-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  height: calc(100% - 1.75rem);
+  padding: 0.125rem;
+  overflow: hidden;
+}
+
+/* Item de ressource */
+.resource-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  padding: 0.25rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0.375rem;
+  position: relative;
+}
+
+/* Barre de progression */
+.progress-bar {
+  width: 100%;
+  height: 0.25rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0.125rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress {
+  height: 100%;
+  border-radius: 0.125rem;
+  transition: width 0.3s ease;
+}
+
+/* Styles spécifiques pour chaque ressource */
+.progress-cpu {
+  background: linear-gradient(90deg, var(--terminal-info-color, #3b82f6) 0%, var(--terminal-info-color-light, #60a5fa) 100%);
+  animation: cpuPulse 4s ease-in-out infinite;
+}
+
+.progress-memory {
+  background: linear-gradient(90deg, var(--terminal-success-color, #10b981) 0%, var(--terminal-success-color-light, #34d399) 100%);
+  animation: memoryWave 6s ease-in-out infinite;
+}
+
+.progress-storage {
+  background: linear-gradient(90deg, var(--terminal-warning-color, #f59e0b) 0%, var(--terminal-warning-color-light, #fbbf24) 100%);
+  animation: storageGrow 8s ease-in-out infinite;
+}
+
+/* Animations des jauges */
+@keyframes cpuPulse {
+  0% { width: 40%; }
+  50% { width: 55%; }
+  100% { width: 40%; }
+}
+
+@keyframes memoryWave {
+  0% { width: 55%; }
+  25% { width: 65%; }
+  50% { width: 58%; }
+  75% { width: 62%; }
+  100% { width: 55%; }
+}
+
+@keyframes storageGrow {
+  0% { width: 70%; }
+  40% { width: 78%; }
+  60% { width: 73%; }
+  80% { width: 76%; }
+  100% { width: 70%; }
+}
+
+/* Effet scanlines */
+.resource-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  border-radius: 0.375rem;
+}
+
+/* Effet screen glow */
+.resource-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at center,
+    transparent 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  pointer-events: none;
+  border-radius: 0.375rem;
+}
+
+/* Textes */
+.resource-title {
+  font-size: 0.625rem;
+  color: var(--accent-color, #f5de15);
+  text-transform: uppercase;
+  opacity: 0.8;
+  text-shadow: 0 0 3px currentColor;
+}
+
+.resource-value {
+  font-size: 0.625rem;
+  color: var(--terminal-text-color, #e2e8f0);
+  text-align: right;
+} 
