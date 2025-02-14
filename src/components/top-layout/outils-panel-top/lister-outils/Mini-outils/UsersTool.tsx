@@ -1,15 +1,12 @@
-'use client'
+"use client";
 
-import React from 'react'
-import { Users } from 'lucide-react'
+import React from "react";
+import { Users } from "lucide-react";
+import { OutilComponent } from "../types";
 
-interface UsersToolProps {
-  onClick?: () => void
-}
-
-const UsersTool: React.FC<UsersToolProps> = ({ onClick }) => {
+const UsersTool: OutilComponent = ({ onClick }) => {
   return (
-    <div 
+    <div
       onClick={onClick}
       className="mini-outil-card w-32 h-32 bg-white dark:bg-gray-800 rounded-xl 
                 shadow-lg hover:shadow-xl transition-all duration-200 
@@ -20,17 +17,15 @@ const UsersTool: React.FC<UsersToolProps> = ({ onClick }) => {
       <div className="icon-container mb-2 text-theme-p">
         <Users size={48} strokeWidth={1.5} />
       </div>
-      <span className="text-sm font-medium text-theme-p">
-        Utilisateurs
-      </span>
+      <span className="text-sm font-medium text-theme-p">Utilisateurs</span>
     </div>
-  )
-}
+  );
+};
 
 UsersTool.Data = {
-  id: 'users-tool',
-  nom: 'Utilisateurs',
-  component: UsersTool
-}
+  id: "users",
+  nom: "Utilisateurs",
+  component: UsersTool,
+};
 
-export default UsersTool 
+export default UsersTool;

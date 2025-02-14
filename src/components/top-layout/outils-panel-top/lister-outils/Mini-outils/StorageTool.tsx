@@ -1,15 +1,12 @@
-'use client'
+"use client";
 
-import React from 'react'
-import { HardDrive } from 'lucide-react'
+import React from "react";
+import { HardDrive } from "lucide-react";
+import { OutilComponent } from "../types";
 
-interface StorageToolProps {
-  onClick?: () => void
-}
-
-const StorageTool: React.FC<StorageToolProps> = ({ onClick }) => {
+const StorageTool: OutilComponent = ({ onClick }) => {
   return (
-    <div 
+    <div
       onClick={onClick}
       className="mini-outil-card w-32 h-32 bg-white dark:bg-gray-800 rounded-xl 
                 shadow-lg hover:shadow-xl transition-all duration-200 
@@ -20,17 +17,15 @@ const StorageTool: React.FC<StorageToolProps> = ({ onClick }) => {
       <div className="icon-container mb-2 text-theme-p">
         <HardDrive size={48} strokeWidth={1.5} />
       </div>
-      <span className="text-sm font-medium text-theme-p">
-        Stockage
-      </span>
+      <span className="text-sm font-medium text-theme-p">Stockage</span>
     </div>
-  )
-}
+  );
+};
 
 StorageTool.Data = {
-  id: 'storage-tool',
-  nom: 'Stockage',
-  component: StorageTool
-}
+  id: "storage",
+  nom: "Stockage",
+  component: StorageTool,
+};
 
-export default StorageTool 
+export default StorageTool;

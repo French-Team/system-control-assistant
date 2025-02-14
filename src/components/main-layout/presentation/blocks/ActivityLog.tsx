@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 interface ActivityItem {
   time: string;
@@ -6,9 +6,9 @@ interface ActivityItem {
 }
 
 const activities: ActivityItem[] = [
-  { time: '09:45', text: 'Mise à jour système effectuée' },
-  { time: '09:30', text: 'Sauvegarde automatique' },
-  { time: '09:15', text: 'Vérification de sécurité' },
+  { time: "09:45", text: "Mise à jour système effectuée" },
+  { time: "09:30", text: "Sauvegarde automatique" },
+  { time: "09:15", text: "Vérification de sécurité" },
 ];
 
 export default function ActivityLog() {
@@ -25,4 +25,4 @@ export default function ActivityLog() {
       </div>
     </div>
   );
-} 
+}

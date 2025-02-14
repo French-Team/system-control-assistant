@@ -1,15 +1,12 @@
-'use client'
+"use client";
 
-import React from 'react'
-import { Activity } from 'lucide-react'
+import React from "react";
+import { LineChart } from "lucide-react";
+import { OutilComponent } from "../types";
 
-interface PerformanceToolProps {
-  onClick?: () => void
-}
-
-const PerformanceTool: React.FC<PerformanceToolProps> = ({ onClick }) => {
+const PerformanceTool: OutilComponent = ({ onClick }) => {
   return (
-    <div 
+    <div
       onClick={onClick}
       className="mini-outil-card w-32 h-32 bg-white dark:bg-gray-800 rounded-xl 
                 shadow-lg hover:shadow-xl transition-all duration-200 
@@ -18,19 +15,17 @@ const PerformanceTool: React.FC<PerformanceToolProps> = ({ onClick }) => {
                 p-4 hover:scale-105"
     >
       <div className="icon-container mb-2 text-theme-p">
-        <Activity size={48} strokeWidth={1.5} />
+        <LineChart size={48} strokeWidth={1.5} />
       </div>
-      <span className="text-sm font-medium text-theme-p">
-        Performance
-      </span>
+      <span className="text-sm font-medium text-theme-p">Performance</span>
     </div>
-  )
-}
+  );
+};
 
 PerformanceTool.Data = {
-  id: 'performance-tool',
-  nom: 'Performance',
-  component: PerformanceTool
-}
+  id: "performance",
+  nom: "Performance",
+  component: PerformanceTool,
+};
 
-export default PerformanceTool 
+export default PerformanceTool;

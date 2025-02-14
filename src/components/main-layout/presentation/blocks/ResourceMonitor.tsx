@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 interface ResourceItem {
   name: string;
@@ -6,9 +6,9 @@ interface ResourceItem {
 }
 
 const resources: ResourceItem[] = [
-  { name: 'CPU', usage: 45 },
-  { name: 'Mémoire', usage: 60 },
-  { name: 'Stockage', usage: 75 },
+  { name: "CPU", usage: 45 },
+  { name: "Mémoire", usage: 60 },
+  { name: "Stockage", usage: 75 },
 ];
 
 export default function ResourceMonitor() {
@@ -20,8 +20,8 @@ export default function ResourceMonitor() {
           <div key={resource.name} className="resource-item">
             <span className="text-theme-primary">{resource.name}</span>
             <div className="progress-bar">
-              <div 
-                className="progress" 
+              <div
+                className="progress"
                 style={{ width: `${resource.usage}%` }}
               />
             </div>
@@ -30,4 +30,4 @@ export default function ResourceMonitor() {
       </div>
     </div>
   );
-} 
+}

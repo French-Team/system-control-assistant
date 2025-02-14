@@ -1,15 +1,12 @@
-'use client'
+"use client";
 
-import React from 'react'
-import { FileText } from 'lucide-react'
+import React from "react";
+import { FileText } from "lucide-react";
+import { OutilComponent } from "../types";
 
-interface LogsToolProps {
-  onClick?: () => void
-}
-
-const LogsTool: React.FC<LogsToolProps> = ({ onClick }) => {
+const LogsTool: OutilComponent = ({ onClick }) => {
   return (
-    <div 
+    <div
       onClick={onClick}
       className="mini-outil-card w-32 h-32 bg-white dark:bg-gray-800 rounded-xl 
                 shadow-lg hover:shadow-xl transition-all duration-200 
@@ -20,17 +17,15 @@ const LogsTool: React.FC<LogsToolProps> = ({ onClick }) => {
       <div className="icon-container mb-2 text-theme-p">
         <FileText size={48} strokeWidth={1.5} />
       </div>
-      <span className="text-sm font-medium text-theme-p">
-        Logs
-      </span>
+      <span className="text-sm font-medium text-theme-p">Logs</span>
     </div>
-  )
-}
+  );
+};
 
 LogsTool.Data = {
-  id: 'logs-tool',
-  nom: 'Logs',
-  component: LogsTool
-}
+  id: "logs",
+  nom: "Logs",
+  component: LogsTool,
+};
 
-export default LogsTool 
+export default LogsTool;

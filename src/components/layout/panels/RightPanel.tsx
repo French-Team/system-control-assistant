@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 interface PanelProps {
   isOpen: boolean;
@@ -15,7 +15,9 @@ export default function RightPanel({ isOpen }: PanelProps) {
           <h3 className="text-theme-h3 mb-2">Activité Récente</h3>
           <ul className="space-y-2">
             <li className="text-theme-p text-sm">Mise à jour du système</li>
-            <li className="text-theme-p text-sm">Nouvel utilisateur connecté</li>
+            <li className="text-theme-p text-sm">
+              Nouvel utilisateur connecté
+            </li>
             <li className="text-theme-p text-sm">Sauvegarde effectuée</li>
           </ul>
         </div>
@@ -39,4 +41,4 @@ export default function RightPanel({ isOpen }: PanelProps) {
       </div>
     </div>
   );
-} 
+}

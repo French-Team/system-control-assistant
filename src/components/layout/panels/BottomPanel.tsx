@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 interface PanelProps {
   isOpen: boolean;
@@ -30,4 +30,4 @@ export default function BottomPanel({ isOpen }: PanelProps) {
       </div>
     </div>
   );
-} 
+}

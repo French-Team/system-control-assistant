@@ -1,15 +1,12 @@
-'use client'
+"use client";
 
-import React from 'react'
-import { Terminal } from 'lucide-react'
+import React from "react";
+import { Terminal } from "lucide-react";
+import { OutilComponent } from "../types";
 
-interface TerminalToolProps {
-  onClick?: () => void
-}
-
-const TerminalTool: React.FC<TerminalToolProps> = ({ onClick }) => {
+const TerminalTool: OutilComponent = ({ onClick }) => {
   return (
-    <div 
+    <div
       onClick={onClick}
       className="mini-outil-card w-32 h-32 bg-white dark:bg-gray-800 rounded-xl 
                 shadow-lg hover:shadow-xl transition-all duration-200 
@@ -20,17 +17,15 @@ const TerminalTool: React.FC<TerminalToolProps> = ({ onClick }) => {
       <div className="icon-container mb-2 text-theme-p">
         <Terminal size={48} strokeWidth={1.5} />
       </div>
-      <span className="text-sm font-medium text-theme-p">
-        Terminal
-      </span>
+      <span className="text-sm font-medium text-theme-p">Terminal</span>
     </div>
-  )
-}
+  );
+};
 
 TerminalTool.Data = {
-  id: 'terminal-tool',
-  nom: 'Terminal',
-  component: TerminalTool
-}
+  id: "terminal",
+  nom: "Terminal",
+  component: TerminalTool,
+};
 
-export default TerminalTool 
+export default TerminalTool;

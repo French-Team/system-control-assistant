@@ -6,11 +6,10 @@ System Control Assistant est une interface de contrôle système moderne et intu
 
 ![Aperçu de l'interface](docs/images/interface.jpg)
 
-
 ## 🎥 Démonstration
 
 [![Vidéo de démonstration](docs/images/video-preview.png)](lien-video)
-*Vidéo à venir*
+_Vidéo à venir_
 
 ## 🚀 Fonctionnalités
 

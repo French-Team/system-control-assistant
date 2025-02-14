@@ -1,15 +1,12 @@
-'use client'
+"use client";
 
-import React from 'react'
-import { Wrench } from 'lucide-react'
+import React from "react";
+import { Wrench } from "lucide-react";
+import { OutilComponent } from "../types";
 
-interface MaintenanceToolProps {
-  onClick?: () => void
-}
-
-const MaintenanceTool: React.FC<MaintenanceToolProps> = ({ onClick }) => {
+const MaintenanceTool: OutilComponent = ({ onClick }) => {
   return (
-    <div 
+    <div
       onClick={onClick}
       className="mini-outil-card w-32 h-32 bg-white dark:bg-gray-800 rounded-xl 
                 shadow-lg hover:shadow-xl transition-all duration-200 
@@ -20,17 +17,15 @@ const MaintenanceTool: React.FC<MaintenanceToolProps> = ({ onClick }) => {
       <div className="icon-container mb-2 text-theme-p">
         <Wrench size={48} strokeWidth={1.5} />
       </div>
-      <span className="text-sm font-medium text-theme-p">
-        Maintenance
-      </span>
+      <span className="text-sm font-medium text-theme-p">Maintenance</span>
     </div>
-  )
-}
+  );
+};
 
 MaintenanceTool.Data = {
-  id: 'maintenance-tool',
-  nom: 'Maintenance',
-  component: MaintenanceTool
-}
+  id: "maintenance",
+  nom: "Maintenance",
+  component: MaintenanceTool,
+};
 
-export default MaintenanceTool 
+export default MaintenanceTool;

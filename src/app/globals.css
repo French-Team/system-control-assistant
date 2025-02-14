@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import '@/components/main-layout/theme.css';
+@import "@/components/main-layout/theme.css";
 
 /* Styles globaux de base */
 body {

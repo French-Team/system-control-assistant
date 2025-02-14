@@ -1,15 +1,12 @@
-'use client'
+"use client";
 
-import React from 'react'
-import { Settings } from 'lucide-react'
+import React from "react";
+import { Settings } from "lucide-react";
+import { OutilComponent } from "../types";
 
-interface ConfigToolProps {
-  onClick?: () => void
-}
-
-const ConfigTool: React.FC<ConfigToolProps> = ({ onClick }) => {
+const ConfigTool: OutilComponent = ({ onClick }) => {
   return (
-    <div 
+    <div
       onClick={onClick}
       className="mini-outil-card w-32 h-32 bg-white dark:bg-gray-800 rounded-xl 
                 shadow-lg hover:shadow-xl transition-all duration-200 
@@ -20,17 +17,15 @@ const ConfigTool: React.FC<ConfigToolProps> = ({ onClick }) => {
       <div className="icon-container mb-2 text-theme-p">
         <Settings size={48} strokeWidth={1.5} />
       </div>
-      <span className="text-sm font-medium text-theme-p">
-        Configuration
-      </span>
+      <span className="text-sm font-medium text-theme-p">Configuration</span>
     </div>
-  )
-}
+  );
+};
 
 ConfigTool.Data = {
-  id: 'config-tool',
-  nom: 'Configuration',
-  component: ConfigTool
-}
+  id: "config",
+  nom: "Configuration",
+  component: ConfigTool,
+};
 
-export default ConfigTool 
+export default ConfigTool;

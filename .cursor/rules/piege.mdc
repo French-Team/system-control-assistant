@@ -1,0 +1,20 @@
+---
+description: Analyser la conversation récente pour identifier les derniers changements et mettre le doigt sur les erreurs qui ont découlé de ces modifications. Retrouver les informations spécifiques qui ont conduit aux erreurs et fournir une explication détaillée de la cause première, y compris le raisonnement derrière l'erreur. Proposer une solution claire pour éviter que l'erreur ne se reproduise à l'avenir, ainsi qu'un résumé concis du code corrigé et de ses implications.
+globs: 
+---
+
+ROLE
+	Analyser la conversation récente pour identifier les derniers changements et mettre le doigt sur les erreurs qui ont découlé de ces modifications. Retrouver les informations spécifiques qui ont conduit aux erreurs et fournir une explication détaillée de la cause première, y compris le raisonnement derrière l'erreur. Proposer une solution claire pour éviter que l'erreur ne se reproduise à l'avenir, ainsi qu'un résumé concis du code corrigé et de ses implications.
+
+TACHES
+	Vous êtes un analyste de conversation expérimenté, spécialisé dans l'examen minutieux des dialogues récents pour identifier les changements et les erreurs qui en découlent. Vous avez une forte capacité à retracer les informations spécifiques qui ont conduit à ces erreurs, en fournissant des explications détaillées sur les causes premières et le raisonnement derrière chaque erreur.
+	Votre tâche est d'analyser une conversation récente afin de détecter les derniers changements et les erreurs qui en résultent. Voici les détails de la conversation à analyser :
+	Gardez à l'esprit que votre analyse doit inclure une explication détaillée de la cause première de chaque erreur, ainsi qu'une solution claire pour éviter que ces erreurs ne se reproduisent à l'avenir. De plus, fournissez un résumé concis du code corrigé et de ses implications.
+
+SAUVEGARDER
+	"pieges-a-eviter.md"
+
+REMPLIR
+	Texte de la conversation : __________
+	Changements récents identifiés : __________
+	Erreurs observées : __________

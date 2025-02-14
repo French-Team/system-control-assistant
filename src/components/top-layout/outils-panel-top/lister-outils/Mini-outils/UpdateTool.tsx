@@ -1,15 +1,12 @@
-'use client'
+"use client";
 
-import React from 'react'
-import { Download } from 'lucide-react'
+import React from "react";
+import { RefreshCw } from "lucide-react";
+import { OutilComponent } from "../types";
 
-interface UpdateToolProps {
-  onClick?: () => void
-}
-
-const UpdateTool: React.FC<UpdateToolProps> = ({ onClick }) => {
+const UpdateTool: OutilComponent = ({ onClick }) => {
   return (
-    <div 
+    <div
       onClick={onClick}
       className="mini-outil-card w-32 h-32 bg-white dark:bg-gray-800 rounded-xl 
                 shadow-lg hover:shadow-xl transition-all duration-200 
@@ -18,19 +15,17 @@ const UpdateTool: React.FC<UpdateToolProps> = ({ onClick }) => {
                 p-4 hover:scale-105"
     >
       <div className="icon-container mb-2 text-theme-p">
-        <Download size={48} strokeWidth={1.5} />
+        <RefreshCw size={48} strokeWidth={1.5} />
       </div>
-      <span className="text-sm font-medium text-theme-p">
-        Mises à jour
-      </span>
+      <span className="text-sm font-medium text-theme-p">Mises à jour</span>
     </div>
-  )
-}
+  );
+};
 
 UpdateTool.Data = {
-  id: 'update-tool',
-  nom: 'Mises à jour',
-  component: UpdateTool
-}
+  id: "update",
+  nom: "Mises à jour",
+  component: UpdateTool,
+};
 
-export default UpdateTool 
+export default UpdateTool;

@@ -1,15 +1,12 @@
-'use client'
+"use client";
 
-import React from 'react'
-import { Clock } from 'lucide-react'
+import React from "react";
+import { Calendar } from "lucide-react";
+import { OutilComponent } from "../types";
 
-interface SchedulerToolProps {
-  onClick?: () => void
-}
-
-const SchedulerTool: React.FC<SchedulerToolProps> = ({ onClick }) => {
+const SchedulerTool: OutilComponent = ({ onClick }) => {
   return (
-    <div 
+    <div
       onClick={onClick}
       className="mini-outil-card w-32 h-32 bg-white dark:bg-gray-800 rounded-xl 
                 shadow-lg hover:shadow-xl transition-all duration-200 
@@ -18,19 +15,17 @@ const SchedulerTool: React.FC<SchedulerToolProps> = ({ onClick }) => {
                 p-4 hover:scale-105"
     >
       <div className="icon-container mb-2 text-theme-p">
-        <Clock size={48} strokeWidth={1.5} />
+        <Calendar size={48} strokeWidth={1.5} />
       </div>
-      <span className="text-sm font-medium text-theme-p">
-        Planificateur
-      </span>
+      <span className="text-sm font-medium text-theme-p">Planificateur</span>
     </div>
-  )
-}
+  );
+};
 
 SchedulerTool.Data = {
-  id: 'scheduler-tool',
-  nom: 'Planificateur',
-  component: SchedulerTool
-}
+  id: "scheduler",
+  nom: "Planificateur",
+  component: SchedulerTool,
+};
 
-export default SchedulerTool 
+export default SchedulerTool;

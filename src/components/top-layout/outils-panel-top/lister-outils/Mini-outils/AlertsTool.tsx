@@ -1,15 +1,12 @@
-'use client'
+"use client";
 
-import React from 'react'
-import { Bell } from 'lucide-react'
+import React from "react";
+import { Bell } from "lucide-react";
+import { OutilComponent } from "../types";
 
-interface AlertsToolProps {
-  onClick?: () => void
-}
-
-const AlertsTool: React.FC<AlertsToolProps> = ({ onClick }) => {
+const AlertsTool: OutilComponent = ({ onClick }) => {
   return (
-    <div 
+    <div
       onClick={onClick}
       className="mini-outil-card w-32 h-32 bg-white dark:bg-gray-800 rounded-xl 
                 shadow-lg hover:shadow-xl transition-all duration-200 
@@ -20,17 +17,15 @@ const AlertsTool: React.FC<AlertsToolProps> = ({ onClick }) => {
       <div className="icon-container mb-2 text-theme-p">
         <Bell size={48} strokeWidth={1.5} />
       </div>
-      <span className="text-sm font-medium text-theme-p">
-        Alertes
-      </span>
+      <span className="text-sm font-medium text-theme-p">Alertes</span>
     </div>
-  )
-}
+  );
+};
 
 AlertsTool.Data = {
-  id: 'alerts-tool',
-  nom: 'Alertes',
-  component: AlertsTool
-}
+  id: "alerts",
+  nom: "Alertes",
+  component: AlertsTool,
+};
 
-export default AlertsTool 
+export default AlertsTool;

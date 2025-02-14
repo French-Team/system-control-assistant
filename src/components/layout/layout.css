@@ -12,50 +12,88 @@
 
 /* Animation de clignotement pour le toggle actif */
 @keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0.3; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Animations pour chaque panneau */
 @keyframes slideTopDown {
-  from { transform: translateY(-100%); }
-  to { transform: translateY(0); }
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideTopUp {
-  from { transform: translateY(0); }
-  to { transform: translateY(-100%); }
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
 }
 
 @keyframes slideBottomUp {
-  from { transform: translateY(100%); }
-  to { transform: translateY(0); }
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideBottomDown {
-  from { transform: translateY(0); }
-  to { transform: translateY(100%); }
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
 }
 
 @keyframes slideLeftIn {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(0); }
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 @keyframes slideLeftOut {
-  from { transform: translateX(0); }
-  to { transform: translateX(-100%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 @keyframes slideRightIn {
-  from { transform: translateX(100%); }
-  to { transform: translateX(0); }
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 @keyframes slideRightOut {
-  from { transform: translateX(0); }
-  to { transform: translateX(100%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
 }
 
 .main-layout {
@@ -200,44 +238,44 @@ header {
 /* Flèches pour panneau supérieur */
 .toggle-bar.top::before,
 .toggle-bar.top::after {
-  content: '▼';
+  content: "▼";
 }
 .toggle-bar.top.active::before,
 .toggle-bar.top.active::after {
-  content: '▲';
+  content: "▲";
   transform: translateY(-2px);
 }
 
 /* Flèches pour panneau inférieur */
 .toggle-bar.bottom::before,
 .toggle-bar.bottom::after {
-  content: '▲';
+  content: "▲";
 }
 .toggle-bar.bottom.active::before,
 .toggle-bar.bottom.active::after {
-  content: '▼';
+  content: "▼";
   transform: translateY(2px);
 }
 
 /* Flèches pour panneau gauche */
 .toggle-bar.left::before,
 .toggle-bar.left::after {
-  content: '◄';
+  content: "◄";
 }
 .toggle-bar.left.active::before,
 .toggle-bar.left.active::after {
-  content: '►';
+  content: "►";
   transform: translateX(2px);
 }
 
 /* Flèches pour panneau droit */
 .toggle-bar.right::before,
 .toggle-bar.right::after {
-  content: '◄';
+  content: "◄";
 }
 .toggle-bar.right.active::before,
 .toggle-bar.right.active::after {
-  content: '►';
+  content: "►";
   transform: translateX(2px);
 }
 
@@ -340,4 +378,4 @@ header {
 
 .panel.open .panel-content {
   opacity: 1;
-} 
+}

@@ -1,15 +1,12 @@
-'use client'
+"use client";
 
-import React from 'react'
-import { Play } from 'lucide-react'
+import React from "react";
+import { Server } from "lucide-react";
+import { OutilComponent } from "../types";
 
-interface ServicesToolProps {
-  onClick?: () => void
-}
-
-const ServicesTool: React.FC<ServicesToolProps> = ({ onClick }) => {
+const ServicesTool: OutilComponent = ({ onClick }) => {
   return (
-    <div 
+    <div
       onClick={onClick}
       className="mini-outil-card w-32 h-32 bg-white dark:bg-gray-800 rounded-xl 
                 shadow-lg hover:shadow-xl transition-all duration-200 
@@ -18,19 +15,17 @@ const ServicesTool: React.FC<ServicesToolProps> = ({ onClick }) => {
                 p-4 hover:scale-105"
     >
       <div className="icon-container mb-2 text-theme-p">
-        <Play size={48} strokeWidth={1.5} />
+        <Server size={48} strokeWidth={1.5} />
       </div>
-      <span className="text-sm font-medium text-theme-p">
-        Services
-      </span>
+      <span className="text-sm font-medium text-theme-p">Services</span>
     </div>
-  )
-}
+  );
+};
 
 ServicesTool.Data = {
-  id: 'services-tool',
-  nom: 'Services',
-  component: ServicesTool
-}
+  id: "services",
+  nom: "Services",
+  component: ServicesTool,
+};
 
-export default ServicesTool 
+export default ServicesTool;

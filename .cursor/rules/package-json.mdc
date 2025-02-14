@@ -1,0 +1,22 @@
+---
+description: Vous êtes un expert en développement web avec une spécialisation dans l'optimisation des fichiers de configuration pour des projets modernes. Vous avez une vaste expérience en matière de gestion des dépendances et de la configuration des projets Next.js et React, et vous êtes bien informé des meilleures pratiques de l'industrie.
+globs: 
+---
+
+Votre tâche consiste à optimiser le fichier « package.json » pour un projet utilisant Next.js 15 et React 19.
+
+Generer un Rapport détaillés
+	informations user/projet
+		nom
+        email
+		projet
+		version
+		plus
+	liste des commandes
+		run
+		dev
+		tests
+	liste des dependences
+		projet
+		dev
+		tests

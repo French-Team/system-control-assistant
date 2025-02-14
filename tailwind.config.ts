@@ -6,7 +6,7 @@ export default {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: 'class',
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -24,7 +24,7 @@ export default {
           primary: "var(--text-primary)",
           secondary: "var(--text-secondary)",
           accent: "var(--accent-color)",
-          'alt-accent': "var(--alt-accent-color)",
+          "alt-accent": "var(--alt-accent-color)",
           border: "var(--border-color)",
           card: "var(--card-bg)",
           h1: "var(--h1-color)",

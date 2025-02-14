@@ -1,15 +1,12 @@
-'use client'
+"use client";
 
-import React from 'react'
-import { Shield } from 'lucide-react'
+import React from "react";
+import { Shield } from "lucide-react";
+import { OutilComponent } from "../types";
 
-interface SecurityToolProps {
-  onClick?: () => void
-}
-
-const SecurityTool: React.FC<SecurityToolProps> = ({ onClick }) => {
+const SecurityTool: OutilComponent = ({ onClick }) => {
   return (
-    <div 
+    <div
       onClick={onClick}
       className="mini-outil-card w-32 h-32 bg-white dark:bg-gray-800 rounded-xl 
                 shadow-lg hover:shadow-xl transition-all duration-200 
@@ -20,17 +17,15 @@ const SecurityTool: React.FC<SecurityToolProps> = ({ onClick }) => {
       <div className="icon-container mb-2 text-theme-p">
         <Shield size={48} strokeWidth={1.5} />
       </div>
-      <span className="text-sm font-medium text-theme-p">
-        Sécurité
-      </span>
+      <span className="text-sm font-medium text-theme-p">Sécurité</span>
     </div>
-  )
-}
+  );
+};
 
 SecurityTool.Data = {
-  id: 'security-tool',
-  nom: 'Sécurité',
-  component: SecurityTool
-}
+  id: "security",
+  nom: "Sécurité",
+  component: SecurityTool,
+};
 
-export default SecurityTool 
+export default SecurityTool;

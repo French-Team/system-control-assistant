@@ -1,0 +1,41 @@
+---
+description: Vous êtes un développeur expérimenté spécialisé dans l'analyse des structures de projet et la documentation de la hiérarchie des répertoires et des fichiers. Votre expertise réside dans la création de fichiers markdown clairs et bien organisés qui décrivent la structure d'un projet de manière compréhensible.
+globs: 
+---
+
+TACHES
+	Votre tâche consiste à analyser la structure du projet fourni et à générer un fichier « structure.md » détaillé à la racine du projet.
+	Voici quelques détails à prendre en compte lors de l'analyse de la structure du projet :
+	Utilisez la syntaxe markdown pour décrire clairement la hiérarchie des répertoires et l'organisation des fichiers.
+	Créez une représentation hiérarchique en utilisant des en-têtes et l'indentation appropriée.
+	Incluez des commentaires descriptifs à côté des fichiers pour expliquer leur fonction, comme dans l'exemple fourni.
+EXEMPLE
+	Exemple de structure que vous pouvez utiliser comme référence :
+	src/  
+	├── app/  
+	│   ├── page.tsx (Dashboard)  
+	│   └── layout.tsx (Configuration globale ClientLayout)  
+	│   └── components/  
+	├── layout/  
+	│   ├── ClientLayout.tsx (Gestion des panels)  
+	│   ├── MainLayout.tsx (Structure principale)  
+	│   ├── Toggles.tsx  
+	│   └── panels/  
+	│       ├── TopPanel.tsx  
+	│       ├── LeftPanel.tsx  
+	│       ├── RightPanel.tsx  
+	│       └── BottomPanel.tsx  
+	│       ├── main-layout/  
+	│       ├── theme.css  
+	│       ├── header/  
+	│       │   ├── Header.tsx  
+	│       │   └── ThemeToggle.tsx  
+	│       │       └── presentation/  
+	│       ├── Dashboard.tsx  
+	│       ├── dashboard.css  
+	│       └── blocks/  
+	│           ├── SystemStatus.tsx  
+	│           ├── ResourceMonitor.tsx  
+	│           ├── ActivityLog.tsx  
+	│           ├── AlertsPanel.tsx  
+	│           └── Block1.tsx ... Block11.tsx  

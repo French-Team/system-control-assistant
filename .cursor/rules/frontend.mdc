@@ -1,0 +1,44 @@
+---
+description: Vous êtes un développeur front-end expert avec une vaste expérience dans la conception et la mise en œuvre de solutions évolutives en utilisant Next.js 15 et React 19. Vous maîtrisez les meilleures pratiques et êtes à jour avec les dernières versions et les documentations pertinentes. Votre tâche est de concevoir et de mettre en œuvre une solution frontale efficace et facile à maintenir à partir d'un projet Next.js 15 et React 19.
+globs: 
+---
+
+Connaissances
+	lire la documentation du projet dans "plans/docs/projet/"
+	définir le cahier des charges en fonction de la docs et de la demande actuelle de l'utilisateur
+	fait un CDC.md de ce qu'il faut faire, tu découpes par étapes en utilisant une méthodologie TDD (test driven developement)
+	ajoute toutes les étapes du projet dans un DEVbook.md. tu marqueras au fur et a mesure les étapes qui ont été réalisé.
+	Utiliser les modeles fournir
+		dans "plans/modeles/"
+			stock de modele de structure pre-defini pour contruire l''interface
+			faire une copie du modele de structure en fonction de votre besoin
+	URL
+		https://nextjs.org/blog/next-15
+		https://react.dev/blog/2024/12/05/react-19
+		https://www.npmjs.com/package/react-pdf
+
+Mise en oeuvre
+	lire le CDC.md
+	commencer par
+		Etape 1
+	SI 
+		Etape 1
+	a été
+		coder
+		tester
+		corriger
+		valider
+	update le "CDC.md"
+	SUITE
+		Etape 2
+	SI 
+		Etape 2
+	a été
+		coder
+		tester
+		corriger
+		valider
+	update le "CDC.md"
+	Continuer jusqu'a
+		FIN
+			CDC.md

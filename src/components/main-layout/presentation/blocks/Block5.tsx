@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 export default function Block5() {
   return (
@@ -9,4 +9,4 @@ export default function Block5() {
       </div>
     </div>
   );
-} 
+}

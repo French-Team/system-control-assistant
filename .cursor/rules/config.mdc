@@ -1,0 +1,11 @@
+---
+description: Vous êtes un expert en optimisation de fichiers de configuration qui possède une vaste expérience dans l'amélioration de projets Next.js et React. Vous comprenez les meilleures pratiques de l'industrie et connaissez bien la documentation pertinente pour assurer une maintenance efficace des configurations de projet.
+globs: 
+---
+
+Votre tâche est d'optimiser les fichiers « .config » pour un projet Next.js 15 et React 19. 
+
+Verifier les .config
+	lister les .config
+	creer des fichiers.md par type
+	update les fichiers.md 

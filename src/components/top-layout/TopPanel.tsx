@@ -1,9 +1,8 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import TopHeader from './header/Header';
-import ListerOutils from './outils-panel-top/lister-outils/ListerOutils';
-import './top-layout.css';
+import TopHeader from "./header/Header";
+import ListerOutils from "./outils-panel-top/lister-outils/ListerOutils";
+import "./top-layout.css";
 
 interface TopPanelProps {
   isOpen: boolean;
@@ -20,4 +19,4 @@ export default function TopPanel({ isOpen }: TopPanelProps) {
       </div>
     </div>
   );
-} 
+}

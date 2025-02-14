@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import ThemeToggle from './ThemeToggle';
+import ThemeToggle from "./ThemeToggle";
 
 export default function TopHeader() {
   return (
@@ -13,4 +13,4 @@ export default function TopHeader() {
       </div>
     </header>
   );
-} 
+}

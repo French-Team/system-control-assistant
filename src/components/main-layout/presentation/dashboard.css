@@ -37,7 +37,9 @@
 .dashboard-item {
   flex: 1 1 calc(20% - 0.4rem); /* 5 items par ligne, avec gap */
   min-width: 150px;
-  min-height: calc((100% - 1.5rem) / 4); /* Hauteur minimale pour 4 rangées avec gaps */
+  min-height: calc(
+    (100% - 1.5rem) / 4
+  ); /* Hauteur minimale pour 4 rangées avec gaps */
   background-color: var(--panel-bg-color);
   color: var(--panel-text-color);
   padding: 0.5rem;
@@ -90,7 +92,7 @@
 }
 
 .status-indicator.active::before {
-  content: '';
+  content: "";
   display: inline-block;
   width: 0.375rem;
   height: 0.375rem;
@@ -175,7 +177,7 @@
 }
 
 .alert-item::before {
-  content: '';
+  content: "";
   display: inline-block;
   width: 0.375rem;
   height: 0.375rem;
@@ -208,4 +210,4 @@
 
 .alert-item.error::before {
   background-color: #ef4444;
-} 
+}

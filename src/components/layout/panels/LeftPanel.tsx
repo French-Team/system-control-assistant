@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 interface PanelProps {
   isOpen: boolean;
@@ -22,4 +22,4 @@ export default function LeftPanel({ isOpen }: PanelProps) {
       </div>
     </div>
   );
-} 
+}

@@ -10,17 +10,13 @@ export const metadata: Metadata = {
   description: "SYSTEM | CONTROL | ASSISTANT avec panneaux coulissants",
 };
 
-export default function Layout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr" className="h-full dark">
-      <body className={`${inter.className} h-full m-0 p-0 overflow-hidden theme-transition`}>
-        <ClientLayout>
-          {children}
-        </ClientLayout>
+      <body
+        className={`${inter.className} h-full m-0 p-0 overflow-hidden theme-transition`}
+      >
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
